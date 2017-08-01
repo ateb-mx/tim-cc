@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Content.master.cs" Inherits="WA_Confirmacion.Content" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head runat="server">
+     <meta charset="utf-8" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - ATEB Servicios S.A de C.V</title>
+    <asp:PlaceHolder runat="server">
+       
+    </asp:PlaceHolder>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Notify.css" rel="stylesheet" />
+    <link href="~/Content/ConfirmaStyle.css" rel="stylesheet" />
+    <link href="~/Images/ateb.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form id="contact" runat="server">
+        <div>
+            <asp:ScriptManager runat="server">
+                <Scripts> 
+                </Scripts>
+            </asp:ScriptManager>
+            <div id="wrapper">
+                <div id="page-wrapper">
+                    <div id="page-inner">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        </div>
+    </form>
+
+    <script src="<%: ResolveUrl("~/Scripts/bootstrap.min.js") %>"></script>
+    <script src="<%: ResolveUrl("~/Scripts/jquery-1.11.1.min.js") %>"></script>
+    <script src="<%: ResolveUrl("~/Scripts/atebsecuritykey-1.1.js") %>"></script>
+    <script src="<%: ResolveUrl("~/Scripts/kjur-jsrsasign/jsrsasign-latest-all-min.js") %>"></script>
+    <script src="<%: ResolveUrl("~/Scripts/kjur-jsrsasign/jsrsasign-8.0.3.min.js") %>"></script>
+    <script src="<%: ResolveUrl("~/Scripts/kjur-jsrsasign/asn1-1.0.13.js") %>"></script>
+    <script src="<%: ResolveUrl("~/Scripts/kjur-jsrsasign/asn1x509-1.0.js") %>"></script>
+    <script src="<%: ResolveUrl("~/Scripts/kjur-jsrsasign/x509-1.1.17.js") %>"></script>
+    <%--<script src="<%: ResolveUrl("~/Scripts/Noti.js") %>"></script>
+    <script src="<%: ResolveUrl("~/Scripts/Notify.js") %>"></script>--%>
+    
+
+</body>
+</html>

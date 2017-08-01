@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ateb.timbrado.com.mx/CFDI/Confirmacion/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ateb.timbrado.com.mx/CFDI/Confirmacion/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ateb.timbrado.com.mx/CFDI/Confirmacion/">
+      <s:element name="Confirmar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XmlBytes" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmarResult" type="tns:ConfirmResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConfirmResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Mensage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Codes" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AuthenticationHeader" type="tns:AuthenticationHeader" />
+      <s:complexType name="AuthenticationHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FechaHoraPeticion" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConfirmarSoapIn">
+    <wsdl:part name="parameters" element="tns:Confirmar" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:portType name="CFDICodigoConfirmacionSoap">
+    <wsdl:operation name="Confirmar">
+      <wsdl:input message="tns:ConfirmarSoapIn" />
+      <wsdl:output message="tns:ConfirmarSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CFDICodigoConfirmacionSoap" type="tns:CFDICodigoConfirmacionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Confirmar">
+      <soap:operation soapAction="http://ateb.timbrado.com.mx/CFDI/Confirmacion/Confirmar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConfirmarAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CFDICodigoConfirmacionSoap12" type="tns:CFDICodigoConfirmacionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Confirmar">
+      <soap12:operation soapAction="http://ateb.timbrado.com.mx/CFDI/Confirmacion/Confirmar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConfirmarAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CFDICodigoConfirmacion">
+    <wsdl:port name="CFDICodigoConfirmacionSoap" binding="tns:CFDICodigoConfirmacionSoap">
+      <soap:address location="http://localhost:27724/CFDICodigoConfirmacion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CFDICodigoConfirmacionSoap12" binding="tns:CFDICodigoConfirmacionSoap12">
+      <soap12:address location="http://localhost:27724/CFDICodigoConfirmacion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
