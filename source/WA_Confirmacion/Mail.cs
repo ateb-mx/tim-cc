@@ -14,6 +14,11 @@ namespace WA_Confirmacion
     {
         private Logger log = LogManager.GetCurrentClassLogger();
 
+        public Mail(string nombre)
+        {
+            Console.WriteLine("Bienvenido " + nombre);
+        }
+
         public void Dispose()
         {
             GC.Collect();
