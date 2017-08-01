@@ -42,8 +42,7 @@
     <script src="<%: ResolveUrl("~/Scripts/kjur-jsrsasign/asn1-1.0.13.js") %>"></script>
     <script src="<%: ResolveUrl("~/Scripts/kjur-jsrsasign/asn1x509-1.0.js") %>"></script>
     <script src="<%: ResolveUrl("~/Scripts/kjur-jsrsasign/x509-1.1.17.js") %>"></script>
-    <%--<script src="<%: ResolveUrl("~/Scripts/Noti.js") %>"></script>
-    <script src="<%: ResolveUrl("~/Scripts/Notify.js") %>"></script>--%>
+   
     
 
 </body>
