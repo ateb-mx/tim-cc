@@ -90,7 +90,6 @@ namespace WA_Confirmacion
             DPIVAMail.AlternateViews.Add(html);
 
 
-            //los vcambios realizados ->aqui<-
             //LCOMail.Body = bd.ToString();
             //LCOMail.IsBodyHtml = true;
 
