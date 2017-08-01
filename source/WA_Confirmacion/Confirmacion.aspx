@@ -81,8 +81,7 @@
             $('#Result').val('');
             var resp = '';
             var SignResult = '';
-            //Se cargaba el contrato por que era lo que se firmaba ahora se firma una cadena origianl
-            //var Contrato = LoadContract();
+            
             
             var Cert = $('#HexCert').val();
             var Key = $('#HexKey').val();
@@ -95,15 +94,14 @@
             //var Cantidad = document.getElementById('NumberOperation').options[document.getElementById('NumberOperation').selectedIndex].value;
             var Cantidad = $('#NumberOperation').val();
             var COriginal = "||" + Fecha + "|" + RFC + "|" + NoCertificado + "|" + Cantidad + "||";
-            //alert('Cadena Original = ' + COriginal);
-            var captcha = false;
+            
 
-            //captcha = grecaptcha.getResponse();
+            captcha = grecaptcha.getResponse();
             
             if (!captcha) {
               
                 try {
-                    //alert('key is null ? ' + Key == null);
+                    
                     SignResult = Sign(Key,pass, COriginal);
                     Noti('Firma Generada Correctamente','info');
                 }
