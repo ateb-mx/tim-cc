@@ -9,7 +9,7 @@
             $('#Year').html(new Date().getFullYear());
             $('#txtFecha').val(getDateTimeFormat());
         });
-
+        //OBTIENE LA FECHA ACTUAL EN FORMATO ESPECIFICO
         function getDateTimeFormat() {
             var now = new Date();
             var now_utc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds()).toISOString();
@@ -32,7 +32,7 @@
         }
     </script>
     <script type="text/javascript">
-
+        //FUNCION QUE OBTIENEN EL ARCHIVO ESPECIFICADO
         var openFile = function (event, control,ftype) {
             var input = event.target;
             var fr = new FileReader();
@@ -59,6 +59,8 @@
                         if (ControlType == 'cer') {
                             $('#HexCert').val(Uint8ArrrayToStringHex(u));
                             $('#txtrfc').val(getRFC($('#HexCert').val()) + '-' + getSerialNumber($('#HexCert').val()));
+
+                            //FUNCIONES DE TRASFORMACIÓN DE TIPO DE FECHA 
                             //var NoAfter = getNotAfter($('#HexCert').val());
                             //var NoAfter2 = NoAfter.substring(0, (NoAfter.length - 1));
                             //var pastime = new Date('1970/01/01');
@@ -83,7 +85,7 @@
             };
             fr.readAsArrayBuffer(input.files[0]);
         };
-
+        //FUNCION QUE VERIFICA LA FIRMA DEL CERTIFICADO ESPECIFICO
         function Verify(pass) {
             <%Session["Confirma"] = true; %>
             $('#Result').val('');
@@ -171,7 +173,7 @@
                                                    <fieldset>
                                                         <h4>Contraseña de llave privada</h4>
                                                         <input placeholder="Contraseña" id="PassCert" type="password" tabindex="3" required="required" />
-                                                        <%--<input id="Contract" name="Contrato" type="text" hidden="hidden" onload="LoadContract()" />--%>
+                                                        
                                                     </fieldset>
                                                    <fieldset>
                                                         <h4>Correo electrónico de contacto</h4>
@@ -198,18 +200,14 @@
                                                    <fieldset>
                                                         <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" onclick="Verify($('#PassCert').val())">Generar</button>
                                                     </fieldset>
-                                                    <%--<asp:UpdatePanel ID="UpAlerta" runat="server">
-                                                           <ContentTemplate>--%>
-                                                               <fieldset>
-                                                                   <div align="center"><h4>Códigos Generados</h4></div>
-                                                                   <div align="center"><asp:TextBox ID="Result" TextMode="MultiLine" Height="90px" Width="300px" runat="server" ></asp:TextBox></div>
-                                                               </fieldset>
-                                                               <p></p>
-                                                               <fieldset>
-                                                                   <div id="notifications"></div>
-                                                               </fieldset>
-                                                           <%--</ContentTemplate>
-                                                       </asp:UpdatePanel>--%>
+                                                    <fieldset>
+                                                        <div align="center"><h4>Códigos Generados</h4></div>
+                                                        <div align="center"><asp:TextBox ID="Result" TextMode="MultiLine" Height="90px" Width="300px" runat="server" ></asp:TextBox></div>
+                                                    </fieldset>
+                                                    <p></p>
+                                                    <fieldset>
+                                                        <div id="notifications"></div>
+                                                    </fieldset>
                                                    <p></p>
                                                    <p id="Copy" class="copyright"><a id="LinkAteb" href="https://www.ateb.com.mx" target="_blank" title="Ateb Servicios">ATEB Servicios S.A de C.V.</a>   copyright© <label id="Year"></label> </p>
                                                </td>
