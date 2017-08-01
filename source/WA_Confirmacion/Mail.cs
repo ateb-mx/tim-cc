@@ -89,6 +89,8 @@ namespace WA_Confirmacion
             html.LinkedResources.Add(ImgLogo);
             DPIVAMail.AlternateViews.Add(html);
 
+
+            //los vcambios realizados ->aqui<-
             //LCOMail.Body = bd.ToString();
             //LCOMail.IsBodyHtml = true;
 
