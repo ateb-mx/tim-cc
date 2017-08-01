@@ -14,6 +14,11 @@ namespace WA_Confirmacion
     {
         private Logger log = LogManager.GetCurrentClassLogger();
 
+        public Mail(string Nombre)
+        {
+            Console.WriteLine("Bienvenido " + Nombre);
+        }
+
         public void Dispose()
         {
             GC.Collect();
@@ -89,6 +94,10 @@ namespace WA_Confirmacion
             html.LinkedResources.Add(ImgLogo);
             DPIVAMail.AlternateViews.Add(html);
 
+
+            //HOLA
+
+            //los vcambios realizados ->aqui<-
             //LCOMail.Body = bd.ToString();
             //LCOMail.IsBodyHtml = true;
 

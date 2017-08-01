@@ -9,7 +9,7 @@
             $('#Year').html(new Date().getFullYear());
             $('#txtFecha').val(getDateTimeFormat());
         });
-
+        //OBTIENE LA FECHA ACTUAL EN FORMATO ESPECIFICO
         function getDateTimeFormat() {
             var now = new Date();
             var now_utc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds()).toISOString();
@@ -32,7 +32,7 @@
         }
     </script>
     <script type="text/javascript">
-
+        //FUNCION QUE OBTIENEN EL ARCHIVO ESPECIFICADO
         var openFile = function (event, control,ftype) {
             var input = event.target;
             var fr = new FileReader();
@@ -59,14 +59,6 @@
                         if (ControlType == 'cer') {
                             $('#HexCert').val(Uint8ArrrayToStringHex(u));
                             $('#txtrfc').val(getRFC($('#HexCert').val()) + '-' + getSerialNumber($('#HexCert').val()));
-                            //var NoAfter = getNotAfter($('#HexCert').val());
-                            //var NoAfter2 = NoAfter.substring(0, (NoAfter.length - 1));
-                            //var pastime = new Date('1970/01/01');
-                            //var span = new Date().getHours();
-                            //var span2 = span - parseFloat(NoAfter2);
-                            //var fecha = new Date(span2);
-                            //alert(fecha);
-                            //var diff = DNotAfter - pastime;
                         }
                         else if (ControlType == 'key') {
                             $('#txtrfc').val('');
@@ -83,14 +75,13 @@
             };
             fr.readAsArrayBuffer(input.files[0]);
         };
-
+        //FUNCION QUE VERIFICA LA FIRMA DEL CERTIFICADO ESPECIFICO
         function Verify(pass) {
             <%Session["Confirma"] = true; %>
             $('#Result').val('');
             var resp = '';
             var SignResult = '';
-            //Se cargaba el contrato por que era lo que se firmaba ahora se firma una cadena origianl
-            //var Contrato = LoadContract();
+            
             
             var Cert = $('#HexCert').val();
             var Key = $('#HexKey').val();
@@ -103,15 +94,14 @@
             //var Cantidad = document.getElementById('NumberOperation').options[document.getElementById('NumberOperation').selectedIndex].value;
             var Cantidad = $('#NumberOperation').val();
             var COriginal = "||" + Fecha + "|" + RFC + "|" + NoCertificado + "|" + Cantidad + "||";
-            //alert('Cadena Original = ' + COriginal);
-            var captcha = false;
+            
 
-            //captcha = grecaptcha.getResponse();
+            captcha = grecaptcha.getResponse();
             
             if (!captcha) {
               
                 try {
-                    //alert('key is null ? ' + Key == null);
+                    
                     SignResult = Sign(Key,pass, COriginal);
                     Noti('Firma Generada Correctamente','info');
                 }
@@ -171,7 +161,7 @@
                                                    <fieldset>
                                                         <h4>Contraseña de llave privada</h4>
                                                         <input placeholder="Contraseña" id="PassCert" type="password" tabindex="3" required="required" />
-                                                        <%--<input id="Contract" name="Contrato" type="text" hidden="hidden" onload="LoadContract()" />--%>
+                                                        
                                                     </fieldset>
                                                    <fieldset>
                                                         <h4>Correo electrónico de contacto</h4>
@@ -198,20 +188,15 @@
                                                    <fieldset>
                                                         <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" onclick="Verify($('#PassCert').val())">Generar</button>
                                                     </fieldset>
-                                                    <%--<asp:UpdatePanel ID="UpAlerta" runat="server">
-                                                           <ContentTemplate>--%>
-                                                               <fieldset>
-                                                                   <div align="center"><h4>Códigos Generados</h4></div>
-                                                                   <div align="center"><asp:TextBox ID="Result" TextMode="MultiLine" Height="90px" Width="300px" runat="server" ></asp:TextBox></div>
-                                                               </fieldset>
-                                                               <p></p>
-                                                               <fieldset>
-                                                                   <div id="notifications"></div>
-                                                               </fieldset>
-                                                           <%--</ContentTemplate>
-                                                       </asp:UpdatePanel>--%>
-                                                   <p></p>
-                                                   <p id="Copy" class="copyright"><a id="LinkAteb" href="https://www.ateb.com.mx" target="_blank" title="Ateb Servicios">ATEB Servicios S.A de C.V.</a>   copyright© <label id="Year"></label> </p>
+                                                    <fieldset>
+                                                        <div align="center"><h4>Códigos Generados</h4></div>
+                                                        <div align="center"><asp:TextBox ID="Result" TextMode="MultiLine" Height="90px" Width="300px" runat="server" ></asp:TextBox></div>
+                                                    </fieldset>
+                                                    <p></p>
+                                                    <fieldset>
+                                                        <div id="notifications"></div>
+                                                    </fieldset>
+                                                   <p id="Copy" class="copyright"><a id="LinkAteb" href="https://www.ateb.com.mx" target="_blank" title="Ateb Servicios">ATEB Servicios S.A de C.V.</a>   copyright© <label id="Year"></label></p>
                                                </td>
                                            </tr>
                                        </table>
