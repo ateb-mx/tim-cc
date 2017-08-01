@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WA_Confirmacion.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PathContract" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Contract\Contract.xml</Value>
+    </Setting>
+    <Setting Name="Host" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mail.ateb.com.mx</Value>
+    </Setting>
+    <Setting Name="Puerto" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="MailEmisor" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">notifications@ateb.com.mx </Value>
+    </Setting>
+    <Setting Name="MailCopia" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Asunto" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Sistema de Códigos de Confirmación(Test)</Value>
+    </Setting>
+    <Setting Name="MailEmisorDesc" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">No Reply</Value>
+    </Setting>
+    <Setting Name="IntentosMail" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="MailUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ivan.renteria@ateb.com.mx</Value>
+    </Setting>
+    <Setting Name="MailPass" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AvM5kVcD0v3.,$</Value>
+    </Setting>
+    <Setting Name="AlertMail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">timbrado@ateb.com.mx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
