@@ -87,9 +87,10 @@ namespace WA_Confirmacion
             LinkedResource ImgLogo = new LinkedResource(Path.Combine(ImagePath, "ateb_r.png"), MediaTypeNames.Image.Jpeg);
             ImgLogo.ContentId = "logo_ateb";
             html.LinkedResources.Add(ImgLogo);
-            //DPIVAMail.AlternateViews.Add(html);
             DPIVAMail.AlternateViews.Add(html);
 
+            //LCOMail.Body = bd.ToString();
+            //LCOMail.IsBodyHtml = true;
 
             //LCOMail.BodyEncoding = System.Text.Encoding.UTF8;
             DPIVAMail.From = new System.Net.Mail.MailAddress(Properties.Settings.Default.MailEmisor, Properties.Settings.Default.MailEmisorDesc);
