@@ -59,16 +59,6 @@
                         if (ControlType == 'cer') {
                             $('#HexCert').val(Uint8ArrrayToStringHex(u));
                             $('#txtrfc').val(getRFC($('#HexCert').val()) + '-' + getSerialNumber($('#HexCert').val()));
-
-                            //FUNCIONES DE TRASFORMACIÓN DE TIPO DE FECHA 
-                            //var NoAfter = getNotAfter($('#HexCert').val());
-                            //var NoAfter2 = NoAfter.substring(0, (NoAfter.length - 1));
-                            //var pastime = new Date('1970/01/01');
-                            //var span = new Date().getHours();
-                            //var span2 = span - parseFloat(NoAfter2);
-                            //var fecha = new Date(span2);
-                            //alert(fecha);
-                            //var diff = DNotAfter - pastime;
                         }
                         else if (ControlType == 'key') {
                             $('#txtrfc').val('');
@@ -208,8 +198,7 @@
                                                     <fieldset>
                                                         <div id="notifications"></div>
                                                     </fieldset>
-                                                   <p></p>
-                                                   <p id="Copy" class="copyright"><a id="LinkAteb" href="https://www.ateb.com.mx" target="_blank" title="Ateb Servicios">ATEB Servicios S.A de C.V.</a>   copyright© <label id="Year"></label> </p>
+                                                   <p id="Copy" class="copyright"><a id="LinkAteb" href="https://www.ateb.com.mx" target="_blank" title="Ateb Servicios">ATEB Servicios S.A de C.V.</a>   copyright© <label id="Year"></label></p>
                                                </td>
                                            </tr>
                                        </table>
