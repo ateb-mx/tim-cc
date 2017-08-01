@@ -49,6 +49,7 @@ function getNotAfter(CertHex)
     x.readCertPEM(CertPEM);
     var NotAfter = x.getNotAfter();
     return NotAfter;
+    //revisar formato de fecha
 }
 function getNotBefore(CertHex) {
     var x = new X509();
@@ -56,6 +57,7 @@ function getNotBefore(CertHex) {
     x.readCertPEM(CertPEM);
     var NotBefore = x.getNotBefore();
     return NotBefore;
+    //revisar formato de fecha
 }
 function getCertificateInfo(CertHex)
 {
