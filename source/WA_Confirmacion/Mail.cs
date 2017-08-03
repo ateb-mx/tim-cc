@@ -57,9 +57,9 @@ namespace WA_Confirmacion
             bd.Append("<h1><blockquote><blockquote>Aviso Automático</blockquote></blockquote> </h1>");
             if (prioridad != MailPriority.High)
             {
-                bd.Append("<p>En el presente se le informa que ha generado los siguientes <strong>Códigos de Confirmación</strong> </p>");
+                bd.Append("<p>En el presente se le informa que ha generado las siguientes <strong>Claves de Confirmación</strong> </p>");
             }
-            bd.Append("<p>Codigos de Confirmación</p>");
+            bd.Append("<p>Claves de Confirmación</p>");
             bd.Append("<p>Detalle: </p>");
             bd.Append("<ul>");
             foreach (String msj in Mensajes)
@@ -77,7 +77,7 @@ namespace WA_Confirmacion
 
             bd.Append("</ul>");
             bd.Append("<p>Fecha : <strong>" + DateTime.Now + "</strong></p>");
-            bd.Append("<p>Fecha : <strong>NOTA:</strong> Los códigos generados tienen una vigencia de 24hrs desde su generación.</p>");
+            bd.Append("<p><strong>NOTA : </strong> Las claves generadas tienen una vigencia de 24hrs desde su generación.</p>");
             bd.Append("<p>&nbsp;</p>");
             bd.Append("<h3>Contáctanos : <strong>Soporte Técnico</strong></h3>");
             bd.Append("<p><strong>Online: &nbsp; <a href=http://www.ateb.mx/soporte/> CONTACTANOS</a></strong></p>");
