@@ -138,7 +138,7 @@
     <div class="panel panel-default" >
         <div class="panel-heading">Solicitud Clave Confirmación
             <div style="float:right">
-                <a href="#modalHelp" role="button" data-toggle="modal"><img id="imgHelp" src="../images/5-Infos.png" height="20" alt="Ayuda" title="Ayuda"/></a>
+                <a href="#modalHelp" role="button" data-toggle="modal"><img id="imgHelp" src="Images/5-Infos.png" height="20" alt="Ayuda" title="Ayuda"/></a>
             </div>
         </div>
         <div class="panel-body">
