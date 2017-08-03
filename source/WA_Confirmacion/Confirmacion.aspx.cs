@@ -17,6 +17,7 @@ namespace WA_Confirmacion
 
             if (IsPostBack)
             {
+                Result.Text = "";
                 if (this.Request["__EVENTTARGET"].ToString() == "veryCert" && Session["Confirma"] != null && bool.Parse(Session["Confirma"].ToString()) == true)
                 {
 
@@ -75,6 +76,7 @@ namespace WA_Confirmacion
 
                                     }
                                     Result.Text = sb.ToString();
+                                    OpenResult();
                                     if (IsValidEmail(email))
                                     {
                                         EnviarMail(SCodigos, email);
@@ -101,6 +103,10 @@ namespace WA_Confirmacion
                 }
 
             }
+        }
+        private void OpenResult()
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "OpenResult", "<script>$('#modalCC').modal('show');</script>", false);
         }
 
         private void Mensaje(String NotiType, String Msg)

@@ -105,7 +105,7 @@
                     Noti('Firma Generada Correctamente','info');
                 }
                 catch (err) {
-                    alert(err);
+                    //alert(err);
                     resp = '0|El archivo de la llave privada no es válido o la contraseña es incorrecta.';
                 }
 
@@ -121,7 +121,7 @@
                         }
                     }
                     catch (err) {
-                        alert(err);
+                        //alert(err);
                         resp = '0|El archivo del Certificado no es válido.';
                     }
                 }
@@ -134,7 +134,9 @@
             return;
        }
     </script>
-
+    <script type="text/javascript">
+       
+    </script>
     <div class="panel panel-default" >
         <div class="panel-heading">Solicitud Clave Confirmación
             <div style="float:right">
@@ -194,12 +196,15 @@
                     <input id="txtFecha" type="text" class=" hidden" disabled="disabled"/>
                 </div>
             </div>
-            <div class="col-xs-4">
-                    <div class="g-recaptcha" style="float:left" data-sitekey="6Lf9lRYUAAAAAPUONS0UO0q2QL7uWg9Uk0pQ8PFL"></div>
+            <div class="col-xs-6">
+                <div class="g-recaptcha" style="float:left" data-sitekey="6Lf9lRYUAAAAAPUONS0UO0q2QL7uWg9Uk0pQ8PFL"></div>
             </div>
-            <div class="col-xs-2" style="text-align:right; vertical-align:text-bottom;">
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" onclick="Verify($('#PassCert').val())" class="btn btn-default bottom">Generar Claves</button>
+            <div class="col-xs-6" style="text-align:right; vertical-align:text-bottom;">
+                <div class="form-group">
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" onclick="Verify($('#PassCert').val())" class="btn btn-default bottom">Generar Claves</button>
+                </div>
             </div>
+            <div class="col-xs-2"></div>
             <div class="col-xs-12">
                 <div class="form-group">
                     <div id="notifications"></div>
@@ -215,7 +220,7 @@
                     <h4 class="modal-title">Claves Generadas</h4>
 			    </div>
 			    <div class="modal-body">
-                    <asp:TextBox ID="Result" TextMode="MultiLine" Height="90px" runat="server" CssClass="form-control" ></asp:TextBox>
+                    <asp:TextBox ID="Result" TextMode="MultiLine" Height="90px" runat="server" ReadOnly="true" CssClass="form-control" ></asp:TextBox>
                 </div>
             </div>
         </div>

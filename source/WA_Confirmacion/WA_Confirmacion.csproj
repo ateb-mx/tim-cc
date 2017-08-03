@@ -111,6 +111,7 @@
     </Content>
     <Content Include="Images\5-Infos.png" />
     <Content Include="Images\ATEB-01a.png" />
+    <Content Include="Images\ateb_r.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
