@@ -118,6 +118,7 @@
     </Content>
     <Content Include="Content.Master" />
     <None Include="Properties\PublishProfiles\Pruebas.pubxml" />
+    <None Include="Properties\PublishProfiles\WA_Confirmacion_Dev.pubxml" />
     <None Include="Service References\WS_Confirmacion\CFDICodigoConfirmacion.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
