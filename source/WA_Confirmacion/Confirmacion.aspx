@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content.Master" AutoEventWireup="true" CodeBehind="Confirmacion.aspx.cs" Inherits="WA_Confirmacion.Confirmacion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+    <script src="Scripts/Noti.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#Year').html(new Date().getFullYear());
@@ -93,9 +93,9 @@
             var COriginal = "||" + Fecha + "|" + RFC + "|" + NoCertificado + "|" + Cantidad + "||";
             
 
-            captcha = grecaptcha.getResponse();
+            var captcha =  grecaptcha.getResponse();
             
-            if (!captcha) {
+            if (captcha.length !=0) {
               
                 try {
                     

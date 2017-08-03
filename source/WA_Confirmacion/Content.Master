@@ -40,7 +40,7 @@
     <script src="Scripts/Notify.js"></script>
     <script src="Scripts/Noti.js"></script>
     
-    <script src="https://www.google.com/recaptcha/api.js"></script>    
+     <script src="https://www.google.com/recaptcha/api.js"></script>   
     
     <script src="Scripts/fileinput/plugins/sortable.js" type="text/javascript"></script>
     <script src="Scripts/fileinput/fileinput.js" type="text/javascript"></script>
