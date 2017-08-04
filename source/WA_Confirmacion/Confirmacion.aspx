@@ -5,6 +5,17 @@
         $(document).ready(function () {
             $('#Year').html(new Date().getFullYear());
             $('#txtFecha').val(getDateTimeFormat());
+
+            $('body').keydown(function (event){
+                if (event.shiftKey) {
+                    event.preventDefault();
+                }
+                if (event.keyCode == 116) {
+                    return false;
+                    //window.location.reload();
+                }
+
+            });
         });
         //OBTIENE LA FECHA ACTUAL EN FORMATO ESPECIFICO
         function getDateTimeFormat() {
@@ -74,12 +85,9 @@
         };
         //FUNCION QUE VERIFICA LA FIRMA DEL CERTIFICADO ESPECIFICO
         function Verify(pass) {
-            <%Session["Confirma"] = true; %>
             $('#Result').val('');
             var resp = '';
             var SignResult = '';
-            
-            
             var Cert = $('#HexCert').val();
             var Key = $('#HexKey').val();
             var email = $('#Email').val();
@@ -132,9 +140,7 @@
             return;
        }
     </script>
-    <script type="text/javascript">
-       
-    </script>
+
     <div class="panel panel-default" >
         <div class="panel-heading">Solicitud Clave Confirmación
             <div style="float:right">
@@ -214,7 +220,7 @@
 	    <div class="modal-dialog modal-lg" role="document">
 		    <div class="modal-content">
 			    <div class="modal-header">
-				    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="Confirma()"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Claves Generadas</h4>
 			    </div>
 			    <div class="modal-body">
