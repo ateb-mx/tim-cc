@@ -100,16 +100,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-glyphicons.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\fileinput\fileinput-rtl.css" />
     <Content Include="Content\fileinput\fileinput-rtl.min.css" />
     <Content Include="Content\fileinput\fileinput.css" />
     <Content Include="Content\fileinput\fileinput.min.css" />
     <Content Include="Content\fileinput\theme.css" />
+    <Content Include="Content\Fonts.GoogleApis.css" />
     <Content Include="Content\style.css" />
     <Content Include="Contract\Contract.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\5-Infos.png" />
     <Content Include="Images\ATEB-01a.png" />
     <Content Include="Images\ateb_r.png" />
@@ -118,6 +121,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content.Master" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\Pruebas.pubxml" />
     <None Include="Properties\PublishProfiles\WA_Confirmacion_Dev.pubxml" />
     <None Include="Service References\WS_Confirmacion\CFDICodigoConfirmacion.wsdl" />
