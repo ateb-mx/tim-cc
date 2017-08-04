@@ -11,8 +11,8 @@
                     event.preventDefault();
                 }
                 if (event.keyCode == 116) {
-                    return false;
-                    //window.location.reload();
+                    //return false;
+                    window.location.replace('Confirmacion.aspx');
                 }
 
             });
