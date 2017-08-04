@@ -100,15 +100,33 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-glyphicons.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\fileinput\fileinput-rtl.css" />
+    <Content Include="Content\fileinput\fileinput-rtl.min.css" />
+    <Content Include="Content\fileinput\fileinput.css" />
+    <Content Include="Content\fileinput\fileinput.min.css" />
+    <Content Include="Content\fileinput\theme.css" />
+    <Content Include="Content\Fonts.GoogleApis.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Contract\Contract.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\5-Infos.png" />
+    <Content Include="Images\ATEB-01a.png" />
+    <Content Include="Images\ateb_r.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content.Master" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\Pruebas.pubxml" />
+    <None Include="Properties\PublishProfiles\WA_Confirmacion_Dev.pubxml" />
     <None Include="Service References\WS_Confirmacion\CFDICodigoConfirmacion.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -125,6 +143,53 @@
     <Content Include="Images\ateb.ico" />
     <Content Include="Scripts\atebsecuritykey-1.1.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\fileinput\fileinput.js" />
+    <Content Include="Scripts\fileinput\fileinput.min.js" />
+    <Content Include="Scripts\fileinput\locales\ar.js" />
+    <Content Include="Scripts\fileinput\locales\az.js" />
+    <Content Include="Scripts\fileinput\locales\bg.js" />
+    <Content Include="Scripts\fileinput\locales\ca.js" />
+    <Content Include="Scripts\fileinput\locales\cr.js" />
+    <Content Include="Scripts\fileinput\locales\cz.js" />
+    <Content Include="Scripts\fileinput\locales\da.js" />
+    <Content Include="Scripts\fileinput\locales\de.js" />
+    <Content Include="Scripts\fileinput\locales\el.js" />
+    <Content Include="Scripts\fileinput\locales\es.js" />
+    <Content Include="Scripts\fileinput\locales\et.js" />
+    <Content Include="Scripts\fileinput\locales\fa.js" />
+    <Content Include="Scripts\fileinput\locales\fi.js" />
+    <Content Include="Scripts\fileinput\locales\fr.js" />
+    <Content Include="Scripts\fileinput\locales\gl.js" />
+    <Content Include="Scripts\fileinput\locales\hu.js" />
+    <Content Include="Scripts\fileinput\locales\id.js" />
+    <Content Include="Scripts\fileinput\locales\it.js" />
+    <Content Include="Scripts\fileinput\locales\ja.js" />
+    <Content Include="Scripts\fileinput\locales\kr.js" />
+    <Content Include="Scripts\fileinput\locales\kz.js" />
+    <Content Include="Scripts\fileinput\locales\LANG.js" />
+    <Content Include="Scripts\fileinput\locales\nl.js" />
+    <Content Include="Scripts\fileinput\locales\no.js" />
+    <Content Include="Scripts\fileinput\locales\pl.js" />
+    <Content Include="Scripts\fileinput\locales\pt-BR.js" />
+    <Content Include="Scripts\fileinput\locales\pt.js" />
+    <Content Include="Scripts\fileinput\locales\ro.js" />
+    <Content Include="Scripts\fileinput\locales\ru.js" />
+    <Content Include="Scripts\fileinput\locales\sk.js" />
+    <Content Include="Scripts\fileinput\locales\sl.js" />
+    <Content Include="Scripts\fileinput\locales\sv.js" />
+    <Content Include="Scripts\fileinput\locales\th.js" />
+    <Content Include="Scripts\fileinput\locales\tr.js" />
+    <Content Include="Scripts\fileinput\locales\uk.js" />
+    <Content Include="Scripts\fileinput\locales\vi.js" />
+    <Content Include="Scripts\fileinput\locales\zh-TW.js" />
+    <Content Include="Scripts\fileinput\locales\zh.js" />
+    <Content Include="Scripts\fileinput\plugins\piexif.js" />
+    <Content Include="Scripts\fileinput\plugins\piexif.min.js" />
+    <Content Include="Scripts\fileinput\plugins\purify.js" />
+    <Content Include="Scripts\fileinput\plugins\purify.min.js" />
+    <Content Include="Scripts\fileinput\plugins\sortable.js" />
+    <Content Include="Scripts\fileinput\plugins\sortable.min.js" />
+    <Content Include="Scripts\fileinput\theme.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\kjur-jsrsasign\asn1-1.0.13.js" />

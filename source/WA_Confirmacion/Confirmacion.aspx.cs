@@ -13,14 +13,15 @@ namespace WA_Confirmacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.ClientScript.GetPostBackEventReference(this, "arg");
 
-            if (IsPostBack)
+
+          if (IsPostBack)
             {
-                if (this.Request["__EVENTTARGET"].ToString() == "veryCert" && Session["Confirma"] != null && bool.Parse(Session["Confirma"].ToString()) == true)
+               
+
+                if (this.Request["__EVENTTARGET"].ToString() == "veryCert")
                 {
-
-
+                    Result.Text = "";
                     String[] argsVeryCert = this.Request["__EVENTARGUMENT"].Split('|');
 
                     if (argsVeryCert[0] == "0")
@@ -74,7 +75,9 @@ namespace WA_Confirmacion
                                         SCodigos.Add(code);
 
                                     }
+                                    
                                     Result.Text = sb.ToString();
+                                    OpenResult();
                                     if (IsValidEmail(email))
                                     {
                                         EnviarMail(SCodigos, email);
@@ -84,7 +87,7 @@ namespace WA_Confirmacion
                                     {
                                         Mensaje("warning", "Información Generada Correctamente, pero es imposible enviar los códigos a su email , ya que no es un email válido !");
                                     }
-                                    Session.Clear();
+
                                 }
                                 else
                                 {
@@ -99,8 +102,16 @@ namespace WA_Confirmacion
 
                     }
                 }
-
+                
+                    
             }
+            else
+                this.ClientScript.GetPostBackEventReference(this, "arg");
+
+        }
+        private void OpenResult()
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "OpenResult", "<script>$('#modalCC').modal('show');</script>", false);
         }
 
         private void Mensaje(String NotiType, String Msg)
